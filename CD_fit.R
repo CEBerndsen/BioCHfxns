@@ -49,7 +49,10 @@ predict_CD <- function(df, guides = TRUE) {
                               -1.6603998403172E-18*lambda^10))
   
   #fit the data spectrum based on user input  
-  CDmod <- nls(data ~ a * helix + b * beta + c * coil, data = CDdf, start = list(a = 0.45, b = 0.45, c = 0.1))
+  CDmod <- nls(data ~ a * helix + b * beta + c * coil, data = CDdf, start = list(a = 0.2, b = 0.5, c = 0.1))
+  
+  CDdf <- CDdf %>% mutate(prediction = 3.29e-7*helix + 3.875e-8*beta + 2.157e-7*coil)
+  
   
   #Plot the prediction and save as an object
   if(guides == FALSE) {
