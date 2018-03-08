@@ -9,3 +9,5 @@ CD_predict: A tool that uses the work of Abriata, L., J. Chem. Educ., 2011, 88 (
 MM_simplefit: A function that takes a data frame with columns conc and rate. Returns a table showing the Vmax and Km values plus error
 
 MM_simplefit_plot: A function that takes a data frame with columns conc and rate. Returns a ggplot2 plot showing the data plus the fit as a line. Plot object can be modifed by assigning the MM_simplefit_plot object to a variable and then using the '+' to add on theme or other geoms.
+
+EnzInh_predict: A function that takes a data frame with columns conc, rate, I (concentration of inhibitor). Returns a table of fitting statistics or a list of the detailed fitting information for comparison. Table must contain at least two concentrations of inhibitor to be effective.
